@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* Design tokens. Same palette as the project proposal deck; the Stitch designs should reuse it
+   (see docs/DESIGN_BRIEF.md). Change a value here and the whole app follows. */
+:root {
+  --brand: #14382b; /* deep court green */
+  --brand-soft: #1b4332;
+  --accent: #ff6b35; /* orange: the one loud colour, used for calls to action */
+  --accent-strong: #d9480f;
+  --sage: #dce5de;
+  --sage-soft: #f1f5f2;
+  --ink: #1a2420;
+  --muted: #5b6b63;
+  --line: #d7dfd9;
+  --danger: #b42318;
+  --success: #1f7a4d;
+  --warning: #9a6700;
+}
+
+@theme inline {
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-sage: var(--sage);
+  --color-sage-soft: var(--sage-soft);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-sora), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: #fff;
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
