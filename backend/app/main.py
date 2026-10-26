@@ -27,6 +27,7 @@ from app.routers import (
     facilities,
     health,
     notifications,
+    rules,
     sports,
 )
 
@@ -61,7 +62,7 @@ def create_app(settings: Settings | None = None, clock: Clock | None = None) -> 
         finally:
             await client.close()
 
-    app = FastAPI(title=settings.app_name, version="0.5.0", lifespan=lifespan)
+    app = FastAPI(title=settings.app_name, version="0.6.0", lifespan=lifespan)
     app.state.settings = settings
     app.state.clock = clock or utc_now  # tests pass a fake clock
 
@@ -76,6 +77,7 @@ def create_app(settings: Settings | None = None, clock: Clock | None = None) -> 
 
     app.include_router(health.router)
     app.include_router(auth.router, prefix=API_PREFIX)
+    app.include_router(rules.router, prefix=API_PREFIX)
     app.include_router(sports.router, prefix=API_PREFIX)
     app.include_router(facilities.router, prefix=API_PREFIX)
     app.include_router(availability.router, prefix=API_PREFIX)

@@ -50,6 +50,10 @@ export interface TimeWindow {
 }
 export type OperatingHours = Record<Weekday, TimeWindow[]>;
 export type MetadataValue = string | number | boolean;
+export interface FacilityAvailability {
+  open_slots_today: number;
+  next_slot: { start: string; end: string } | null;
+}
 export interface Facility {
   id: string;
   name: string;
@@ -61,6 +65,15 @@ export interface Facility {
   metadata: Record<string, MetadataValue>;
   created_at: string;
   updated_at: string;
+  /** only present when requested with `with_availability` (and the facility is active) */
+  availability?: FacilityAvailability | null;
+}
+
+export interface Rules {
+  booking_window_days: number;
+  cancellation_cutoff_minutes: number;
+  max_active_bookings: number;
+  campus_timezone: string;
 }
 
 // ---- slots & bookings

@@ -3,7 +3,7 @@
 A full-stack platform for discovering and booking university sports facilities.
 **Next.js** (frontend) - **FastAPI** (backend) - **MongoDB** (database; Atlas in deployment).
 
-> Status: the backend is feature-complete. The frontend has its foundation (login, register, route guards, API client, layouts); the designed screens come in steps 7 and 8.
+> Status: the backend is feature-complete and the student screens are built. The admin screens come in step 8.
 > See `docs/DECISIONS.md` for what is decided vs. implemented.
 
 ## Prerequisites
@@ -36,7 +36,7 @@ npx create-next-app@latest frontend --typescript --tailwind --eslint --app --src
   --import-alias "@/*" --use-npm --disable-git
 rm -rf frontend/.git   # safety net: the repo must have exactly one .git, at the root
 
-cd frontend && npm install @tanstack/react-query && cp .env.local.example .env.local
+cd frontend && npm install @tanstack/react-query lucide-react && cp .env.local.example .env.local
 ```
 See `docs/FRONTEND.md` for the structure and conventions, and `docs/DESIGN_BRIEF.md` for the Stitch prompts.
 
@@ -50,8 +50,9 @@ See `docs/FRONTEND.md` for the structure and conventions, and `docs/DESIGN_BRIEF
 
 | GET | `/api/v1/sports`, `/api/v1/sports/{id}` | none | sports with their attribute definitions |
 | POST / PATCH / DELETE | `/api/v1/sports[/{id}]` | admin | delete is blocked while facilities use the sport |
-| GET | `/api/v1/facilities` | none | filters: `sport_id`, `q`, `meta.<attr>=<value>` (needs `sport_id`); `include_inactive=true` is admin-only |
+| GET | `/api/v1/facilities` | none | filters: `sport_id`, `q`, `meta.<attr>=<value>` (needs `sport_id`); `include_inactive=true` is admin-only; `with_availability=true` adds today's open slots and next free slot |
 | GET | `/api/v1/facilities/{id}` | none | facility with its sport joined in |
+| GET | `/api/v1/rules` | none | booking window, cancellation cut-off, booking cap |
 | POST / PATCH | `/api/v1/facilities[/{id}]` | admin | metadata is validated against the sport's attributes; no hard delete (set `status: "inactive"`) |
 | GET | `/api/v1/facilities/{id}/slots?date=YYYY-MM-DD` | none (optional) | slot grid with `available` / `booked` / `past` / `unavailable`; `booked_by_me` when logged in |
 | POST | `/api/v1/bookings` | student | `{facility_id, start}` (ISO datetime **with** UTC offset); 409 `SLOT_TAKEN` if someone else holds it |
@@ -89,7 +90,7 @@ In Swagger UI (`/docs`) use the **Authorize** button; it logs in through the sam
 ```
 backend/    FastAPI app (app/), CLI scripts (scripts/: admin, seeds, explain), tests (tests/)
 frontend/   Next.js app (generated, see above)
-docs/       DECISIONS.md (decisions), DATA_MODEL.md, FRONTEND.md, DESIGN_BRIEF.md
+docs/       DECISIONS.md, DATA_MODEL.md, FRONTEND.md, DESIGN_BRIEF.md, DESIGN_NOTES.md
 design/     Google Stitch exports (reference for the screens)
 ```
 

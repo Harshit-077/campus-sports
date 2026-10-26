@@ -21,8 +21,8 @@ export function Field({ label, error, hint, className, ...rest }: FieldProps) {
         aria-invalid={error ? true : undefined}
         aria-describedby={error || hint ? `${id}-note` : undefined}
         className={cn(
-          "h-11 w-full rounded-lg border bg-white px-3 text-sm text-ink placeholder:text-muted/70",
-          "focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-accent",
+          "h-12 w-full rounded-xl border bg-white px-3 text-sm text-on-surface placeholder:text-muted/70",
+          "focus-visible:border-primary-container focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-container",
           error ? "border-danger" : "border-line",
           className,
         )}

@@ -87,6 +87,18 @@ class FacilityUpdate(BaseModel):
     metadata: dict[str, Any] | None = None
 
 
+class SlotWindow(BaseModel):
+    start: datetime
+    end: datetime
+
+
+class FacilityAvailability(BaseModel):
+    """Today's picture for one facility (only present when `with_availability=true`)."""
+
+    open_slots_today: int
+    next_slot: SlotWindow | None  # earliest still-open slot today, or null
+
+
 class FacilityOut(BaseModel):
     id: str
     name: str
@@ -98,6 +110,7 @@ class FacilityOut(BaseModel):
     metadata: dict[str, Any]
     created_at: datetime
     updated_at: datetime
+    availability: FacilityAvailability | None = None
 
     @classmethod
     def from_doc(cls, doc: dict[str, Any]) -> "FacilityOut":

@@ -37,3 +37,7 @@ export function EmptyState({ title, children }: { title: string; children?: Reac
     </div>
   );
 }
+
+export function Skeleton({ className = "" }: { className?: string }) {
+  return <div aria-hidden className={`animate-pulse rounded-xl bg-surface-container ${className}`} />;
+}

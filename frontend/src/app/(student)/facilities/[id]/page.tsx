@@ -1,5 +1,11 @@
-import { ComingSoon } from "@/components/coming-soon";
+import { Suspense } from "react";
+
+import { FacilityDetail } from "./facility-detail";
 
 export default function FacilityDetailsPage() {
-  return <ComingSoon title="Facility details" step={7} />;
+  return (
+    <Suspense>
+      <FacilityDetail />
+    </Suspense>
+  );
 }

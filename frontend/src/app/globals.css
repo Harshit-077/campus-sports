@@ -1,14 +1,11 @@
 @import "tailwindcss";
 
-/* Design tokens. Same palette as the project proposal deck; the Stitch designs should reuse it
-   (see docs/DESIGN_BRIEF.md). Change a value here and the whole app follows. */
+/* Design tokens = the "Field & Court" system generated in Google Stitch (design/stitch/field_court/DESIGN.md).
+   Class names follow Stitch's: bg-surface-container-lowest, text-on-surface, text-on-surface-variant, ...
+   The short legacy names (brand, accent, sage, ink, muted, line) are kept as aliases for the same colours. */
 :root {
-  --brand: #14382b; /* deep court green */
-  --brand-soft: #1b4332;
-  --accent: #ff6b35; /* orange: the one loud colour, used for calls to action */
-  --accent-strong: #d9480f;
-  --sage: #dce5de;
-  --sage-soft: #f1f5f2;
+  --brand: #14382b;
+  --accent: #ff6b35;
   --ink: #1a2420;
   --muted: #5b6b63;
   --line: #d7dfd9;
@@ -17,27 +14,109 @@
   --warning: #9a6700;
 }
 
-@theme inline {
-  --color-brand: var(--brand);
-  --color-brand-soft: var(--brand-soft);
-  --color-accent: var(--accent);
-  --color-accent-strong: var(--accent-strong);
-  --color-sage: var(--sage);
-  --color-sage-soft: var(--sage-soft);
-  --color-ink: var(--ink);
-  --color-muted: var(--muted);
-  --color-line: var(--line);
-  --color-danger: var(--danger);
-  --color-success: var(--success);
-  --color-warning: var(--warning);
+@theme {
+  /* Stitch colour roles */
+  --color-background: #f1fcf5;
+  --color-surface: #f1fcf5;
+  --color-surface-dim: #d1ddd6;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #ebf6f0;
+  --color-surface-container: #e5f1ea;
+  --color-surface-container-high: #dfebe4;
+  --color-surface-container-highest: #dae5df;
+  --color-on-surface: #141e1a;
+  --color-on-surface-variant: #414844;
+  --color-inverse-surface: #28332e;
+  --color-inverse-on-surface: #e8f3ed;
+  --color-outline: #717974;
+  --color-outline-variant: #c1c8c3;
+  --color-primary: #002217;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #14382b;
+  --color-on-primary-container: #7da291;
+  --color-primary-fixed: #c4ebd8;
+  --color-on-primary-fixed: #002116;
+  --color-on-primary-fixed-variant: #2a4d3f;
+  --color-secondary: #ab3500;
+  --color-secondary-container: #fe6a34;
+  --color-on-secondary-container: #5d1900;
+  --color-secondary-fixed: #ffdbd0;
+  --color-on-secondary-fixed-variant: #832600;
+  --color-tertiary-fixed: #dce5de;
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-success: #1f7a4d;
+  --color-warning: #9a6700;
+  --color-danger: #b42318;
+
+  /* Stitch slot-grid colours */
+  --color-slot-booked: #e5ece7;
+  --color-slot-booked-text: #8a9a92;
+  --color-slot-past-text: #a8b5ae;
+
+  /* legacy aliases (same values as the roles above) */
+  --color-brand: #14382b;
+  --color-brand-soft: #2a4d3f;
+  --color-accent: #ff6b35;
+  --color-accent-strong: #d9480f;
+  --color-sage: #dce5de;
+  --color-sage-soft: #f1fcf5;
+  --color-ink: #1a2420;
+  --color-muted: #5b6b63;
+  --color-line: #d7dfd9;
+
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-sora), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Stitch type scale: text-headline-xl etc. (size + line height + tracking + weight) */
+  --text-headline-xl: 40px;
+  --text-headline-xl--line-height: 48px;
+  --text-headline-xl--letter-spacing: -0.02em;
+  --text-headline-xl--font-weight: 600;
+  --text-headline-lg: 28px;
+  --text-headline-lg--line-height: 36px;
+  --text-headline-lg--letter-spacing: -0.015em;
+  --text-headline-lg--font-weight: 600;
+  --text-headline-md: 20px;
+  --text-headline-md--line-height: 28px;
+  --text-headline-md--letter-spacing: -0.01em;
+  --text-headline-md--font-weight: 600;
+  --text-headline-sm: 16px;
+  --text-headline-sm--line-height: 24px;
+  --text-headline-sm--font-weight: 600;
+  --text-stat-display: 36px;
+  --text-stat-display--line-height: 44px;
+  --text-stat-display--letter-spacing: -0.02em;
+  --text-stat-display--font-weight: 600;
+  --text-label-lg: 14px;
+  --text-label-lg--line-height: 20px;
+  --text-label-lg--letter-spacing: 0.01em;
+  --text-label-lg--font-weight: 600;
+  --text-label-md: 12px;
+  --text-label-md--line-height: 16px;
+  --text-label-md--letter-spacing: 0.02em;
+  --text-label-md--font-weight: 600;
+  --text-label-sm: 11px;
+  --text-label-sm--line-height: 14px;
+  --text-label-sm--letter-spacing: 0.03em;
+  --text-label-sm--font-weight: 500;
 }
 
 body {
-  background: #fff;
-  color: var(--ink);
+  background: var(--color-background);
+  color: var(--color-on-surface);
   font-family: var(--font-sans);
+}
+
+/* Maintenance slots: 45-degree stripes (from the design system) */
+.slot-stripes {
+  background: repeating-linear-gradient(45deg, #e5ece7, #e5ece7 8px, #f1f5f2 8px, #f1f5f2 16px);
+}
+
+/* Native <dialog> modal */
+dialog.modal::backdrop {
+  background: rgba(26, 36, 32, 0.4);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -45,7 +45,12 @@ Status values: **Implemented** (in the code now) - **Proposed** (agreed, not bui
 | 39 | Route protection is client-side (`RequireAuth` around the `(student)` and `(admin)` route groups, with `?next=` return); no Next middleware. It only guides users: the backend enforces every role | Implemented |
 | 40 | Data fetching with TanStack Query; every call goes through typed functions in `lib/services.ts` on one `api()` wrapper that attaches the token and parses the uniform error shape into `ApiError` | Implemented |
 | 41 | Times are always displayed in the campus timezone (`Intl` with `NEXT_PUBLIC_CAMPUS_TIMEZONE`), independent of the browser's timezone | Implemented |
-| 42 | Design tokens (palette and fonts, same as the proposal deck) live in `globals.css`. Screens are designed in Google Stitch from `docs/DESIGN_BRIEF.md` and converted to components in steps 7 and 8 | Proposed |
+| 42 | Design tokens (palette, fonts, type scale) live in `globals.css` under the names of the Stitch design system (`design/stitch/field_court/DESIGN.md`). Screens are built from the Stitch designs; `docs/DESIGN_NOTES.md` records what was kept and left out | Implemented |
+| 43 | Public `GET /rules` returns the booking window, cancellation cut-off and booking cap, so the UI shows the configured numbers instead of hard-coding them | Implemented |
+| 44 | `GET /facilities?with_availability=true` adds today's open-slot count and next free slot to each active facility, computed from slot grids and ONE bookings query (served by the unique `(facility_id, start)` index) | Implemented |
+| 45 | The facilities screen uses the server-side attribute filters (`meta.*`, backed by the wildcard index on `metadata`) instead of filtering in the browser | Implemented |
+| 46 | Icons come from `lucide-react` (1.75 stroke) instead of the Material Symbols font used in the Stitch exports: no external font request, tree-shaken SVGs | Implemented |
+| 47 | Features in the Stitch designs that need data the system does not have (gate passes, rank, fees, court blueprints, partner invites) are deliberately not built | Implemented |
 
 ## Notes
 - Decisions 5/6 (now implemented) replace the earlier pre-generated `slots` collection: one collection and one atomic

@@ -17,6 +17,7 @@ import type {
   PeriodCount,
   Ranged,
   Role,
+  Rules,
   Sport,
   SportCategory,
   SportCount,
@@ -62,6 +63,8 @@ export interface FacilityQuery {
   sport_id?: string;
   q?: string;
   include_inactive?: boolean;
+  /** adds today's open-slot count and next free slot to each active facility */
+  with_availability?: boolean;
   /** sport-specific attribute filters, e.g. { surface: "wooden", air_conditioning: true } */
   meta?: Record<string, MetadataValue>;
 }
@@ -89,6 +92,11 @@ export const catalogApi = {
   /** date = campus-local "YYYY-MM-DD" */
   slots: (facilityId: string, date: string) =>
     api<SlotsResponse>(`/facilities/${facilityId}/slots`, { query: { date } }),
+};
+
+// ----------------------------------------------------------------------- rules
+export const rulesApi = {
+  get: () => api<Rules>("/rules", { auth: false }),
 };
 
 // -------------------------------------------------------------------- bookings

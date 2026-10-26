@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Campus Sports - Administration</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-container": "#2b342f", "on-surface-variant": "#414844", "on-secondary": "#ffffff", "on-tertiary": "#ffffff", "on-primary": "#ffffff", "primary-fixed": "#c4ebd8", "primary": "#002217", "surface-container-high": "#dfebe4", "on-tertiary-container": "#939c96", "background": "#f1fcf5", "on-tertiary-fixed": "#151d19", "error-container": "#ffdad6", "surface-container-highest": "#dae5df", "surface-variant": "#dae5df", "inverse-primary": "#a8cfbd", "on-primary-fixed-variant": "#2a4d3f", "on-primary-fixed": "#002116", "primary-fixed-dim": "#a8cfbd", "surface-tint": "#426656", "on-secondary-fixed-variant": "#832600", "secondary": "#ab3500", "on-error": "#ffffff", "on-surface": "#141e1a", "tertiary": "#171f1b", "inverse-surface": "#28332e", "on-secondary-fixed": "#390c00", "error": "#ba1a1a", "surface": "#f1fcf5", "on-background": "#141e1a", "on-error-container": "#93000a", "secondary-fixed-dim": "#ffb59d", "surface-container-lowest": "#ffffff", "on-secondary-container": "#5d1900", "surface-container-low": "#ebf6f0", "outline-variant": "#c1c8c3", "secondary-fixed": "#ffdbd0", "on-tertiary-fixed-variant": "#404944", "surface-bright": "#f1fcf5", "surface-container": "#e5f1ea", "secondary-container": "#fe6a34", "tertiary-fixed-dim": "#c0c9c2", "tertiary-fixed": "#dce5de", "on-primary-container": "#7da291", "outline": "#717974", "surface-dim": "#d1ddd6", "inverse-on-surface": "#e8f3ed", "primary-container": "#14382b" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-mobile": "0.75rem", "space-md": "1rem", "space-sm": "0.5rem", "space-xl": "2.5rem", "space-xs": "0.25rem", "margin": "2rem", "gutter": "1.5rem", "margin-mobile": "1rem", "space-lg": "1.5rem" }, "fontFamily": { "body-md-medium": [ "Inter" ], "stat-display": [ "Sora" ], "headline-sm": [ "Sora" ], "headline-xl-mobile": [ "Sora" ], "body-lg": [ "Inter" ], "body-md": [ "Inter" ], "label-md": [ "Inter" ], "headline-xl": [ "Sora" ], "label-sm": [ "Inter" ], "body-sm": [ "Inter" ], "headline-md": [ "Sora" ], "headline-lg": [ "Sora" ], "label-lg": [ "Inter" ], "headline-lg-mobile": [ "Sora" ] }, "fontSize": { "body-md-medium": [ "14px", { "lineHeight": "20px", "fontWeight": "500" } ], "stat-display": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "headline-sm": [ "16px", { "lineHeight": "24px", "fontWeight": "600" } ], "headline-xl-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "headline-xl": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "headline-md": [ "20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "headline-lg-mobile": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" } ] } } } };</script></head><body class="min-h-full bg-surface text-on-surface flex flex-col font-body-md text-body-md"><header class="fixed top-0 left-0 right-0 z-50 bg-primary-container text-on-primary shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-7xl mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary-container"><span class="material-symbols-outlined text-[20px]">sports_score</span></div><span class="font-headline-sm text-headline-sm tracking-tight text-on-primary font-semibold">Campus Sports</span><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary font-label-sm text-label-sm uppercase tracking-wider">Admin</span></div><nav class="hidden xl:flex items-center gap-1" data-active-classes="bg-surface-container-lowest/15 text-on-primary font-body-md-medium"><a class="px-3 py-2 rounded-lg text-on-primary-container hover:bg-surface-container-lowest/10 hover:text-on-primary transition-colors font-body-md text-body-md" data-path="overview" href="#">Overview</a><a class="px-3 py-2 rounded-lg text-on-primary-container hover:bg-surface-container-lowest/10 hover:text-on-primary transition-colors font-body-md text-body-md" data-path="sports" href="#">Sports</a><a class="px-3 py-2 rounded-lg text-on-primary-container hover:bg-surface-container-lowest/10 hover:text-on-primary transition-colors font-body-md text-body-md" data-path="facilities" href="#">Facilities</a><a aria-current="page" class="px-3 py-2 rounded-lg transition-colors bg-surface-container-lowest/15 text-on-primary font-body-md-medium" data-path="bookings" href="#">Bookings</a><a class="px-3 py-2 rounded-lg text-on-primary-container hover:bg-surface-container-lowest/10 hover:text-on-primary transition-colors font-body-md text-body-md" data-path="users" href="#">Users</a><a class="px-3 py-2 rounded-lg text-on-primary-container hover:bg-surface-container-lowest/10 hover:text-on-primary transition-colors font-body-md text-body-md" data-path="analytics" href="#">Analytics</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-lowest/10 text-on-primary-container font-label-md text-label-md"><span class="w-2 h-2 rounded-full bg-primary-fixed"></span><span>All 8 Venues Open • 94% Operational</span></div><button class="relative p-2 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-surface-container-lowest/10 transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-secondary-container"></span></button><div class="flex items-center gap-3 pl-2 border-l border-surface-container-lowest/15"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden md:flex flex-col text-left"><span class="font-label-lg text-label-lg text-on-primary leading-tight">Dr. Marcus Vance</span><span class="font-label-sm text-label-sm text-on-primary-container leading-tight">Head Facility Manager</span></div></div><a class="hidden sm:inline-flex items-center px-3 py-1.5 rounded-lg border border-surface-container-lowest/25 font-label-md text-label-md text-on-primary hover:bg-surface-container-lowest/10 transition-colors" data-path="login" href="#">Log out</a></div></div></header><main class="flex-1 w-full pt-16 bg-surface"><div class="max-w-7xl mx-auto px-margin py-space-lg"><div class="flex flex-col w-full">
+<!-- Top Command & Action Bar -->
+<div class="w-full flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-lg">
+<div class="flex flex-col">
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase text-on-surface-variant">Central Athletic Complex • Real-Time Roster</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Bookings &amp; Attendance Management</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+        Monitor live court occupancy, verify student turnstile entry, handle cancellations, and reassign facilities across campus athletic centers.
+      </p>
+</div>
+<!-- Single Orange Accent CTA for Page -->
+<div class="flex items-center gap-space-sm self-start md:self-auto shrink-0">
+<button class="h-12 px-space-lg rounded-xl bg-secondary-container text-on-secondary font-headline-sm text-headline-sm flex items-center gap-2 hover:opacity-95 transition-opacity" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>+ Manual Booking / Admin Override</span>
+</button>
+</div>
+</div>
+<!-- Live Turnstile Metric Strip (Elevated crisp panels) -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md mb-space-lg">
+<div class="bg-surface-container-lowest p-space-md rounded-xl flex items-center justify-between">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Active Turnstile Scans</p>
+<p class="font-stat-display text-stat-display text-primary-container font-semibold mt-1">76</p>
+<span class="font-body-sm text-body-sm text-surface-tint flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[15px]">sensors</span> Gate A, B &amp; Pool Hub
+        </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[26px]">how_to_reg</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl flex items-center justify-between">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Scheduled Today</p>
+<p class="font-stat-display text-stat-display text-on-surface font-semibold mt-1">142</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[15px]">event_available</span> 8 Venues / 24 Courts
+        </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[26px]">stadium</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl flex items-center justify-between">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Pending Entry</p>
+<p class="font-stat-display text-stat-display text-secondary font-semibold mt-1">48</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[15px]">schedule</span> Slots starting ≤ 60 min
+        </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[26px]">pending_actions</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl flex items-center justify-between">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Unclaimed / No-Show</p>
+<p class="font-stat-display text-stat-display text-error font-semibold mt-1">6</p>
+<span class="font-body-sm text-body-sm text-error flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[15px]">warning</span> Eligible for walk-in re-issue
+        </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[26px]">person_cancel</span>
+</div>
+</div>
+</div>
+<!-- Filter & Search Console -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl mb-space-md flex flex-col gap-space-md">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-sm items-center">
+<!-- Search Bar -->
+<div class="lg:col-span-6 relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full h-12 pl-11 pr-4 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest" placeholder="Search by student name (e.g. Asha Verma), student ID, court, or token..." type="text" value="Asha Verma"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Date Dropdown -->
+<div class="lg:col-span-3">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">calendar_today</span>
+<select class="w-full h-12 pl-11 pr-8 rounded-xl bg-surface-container-low text-on-surface font-body-md-medium text-body-md-medium appearance-none focus:outline-none focus:bg-surface-container-lowest cursor-pointer">
+<option selected="">Today (Tue 03 Nov 2025)</option>
+<option>Tomorrow (Wed 04 Nov 2025)</option>
+<option>Thu 05 Nov 2025</option>
+<option>Past: Mon 02 Nov 2025</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Sport Dropdown -->
+<div class="lg:col-span-3">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">sports_tennis</span>
+<select class="w-full h-12 pl-11 pr-8 rounded-xl bg-surface-container-low text-on-surface font-body-md-medium text-body-md-medium appearance-none focus:outline-none focus:bg-surface-container-lowest cursor-pointer">
+<option selected="">All Sports (Badminton, Basketball...)</option>
+<option>Badminton Courts (A1 - A6)</option>
+<option>Olympic Pool (Lanes 1-8)</option>
+<option>Tennis Hardcourts (1-4)</option>
+<option>Indoor Basketball (Arena B)</option>
+<option>Synthetic Football Turf 1 &amp; 2</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Status Segmented Pills -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-2">
+<div class="flex flex-wrap items-center gap-2">
+<button class="h-9 px-4 rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center gap-1.5 shadow-sm" type="button">
+<span>All Statuses</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-lowest/20 text-on-primary text-[10px]">142</span>
+</button>
+<button class="h-9 px-4 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors flex items-center gap-1.5" type="button">
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim"></span>
+<span>Checked In</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface text-[10px]">76</span>
+</button>
+<button class="h-9 px-4 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors flex items-center gap-1.5" type="button">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span>Confirmed / Upcoming</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface text-[10px]">48</span>
+</button>
+<button class="h-9 px-4 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors flex items-center gap-1.5" type="button">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span>Cancelled</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface text-[10px]">12</span>
+</button>
+<button class="h-9 px-4 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors flex items-center gap-1.5" type="button">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>No-show</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface text-[10px]">6</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Gate sync rate: <strong>1.2s</strong></span>
+<button class="h-8 px-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary-container font-label-sm text-label-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>Auto-Refresh ON</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Primary Roster Layout: Grid split with Walk-in Quick Station -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md items-start">
+<!-- Main Table Container (xl:col-span-9) -->
+<div class="xl:col-span-9 bg-surface-container-lowest rounded-xl p-space-md flex flex-col">
+<!-- Table Header & Filter Summary -->
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[20px]">badge</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Active Roster &amp; Court Assignments</h2>
+<span class="ml-2 px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Filter: "Asha Verma" matching (1) + Current Shift (5)</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" title="Column Density" type="button">
+<span class="material-symbols-outlined text-[20px]">density_medium</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" title="Print Turnstile Roll" type="button">
+<span class="material-symbols-outlined text-[20px]">print</span>
+</button>
+</div>
+</div>
+<!-- High Density Table -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse min-w-[980px]">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">
+<th class="py-3 px-4 rounded-l-lg">Student / Member</th>
+<th class="py-3 px-3">Student ID &amp; Roll</th>
+<th class="py-3 px-3">Facility &amp; Court</th>
+<th class="py-3 px-3">Time Slot (24h)</th>
+<th class="py-3 px-3">Gate Access &amp; Token</th>
+<th class="py-3 px-3">Status</th>
+<th class="py-3 px-4 rounded-r-lg text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md divide-y-0">
+<!-- Row 1: Asha Verma (MATCHING DASHBOARD STATE - Confirmed, upcoming 17:00 Badminton) -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low/70 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center font-headline-sm text-headline-sm text-primary-container shrink-0">
+                    AV
+                  </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Asha Verma</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span> B.Tech Year 3 • CompSci
+                    </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">#8842</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2023-CS-042</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-[16px]">sports_tennis</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Badminton Court 1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Block A (Indoor Hall)</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">17:00 – 18:00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Today • Tue 03 Nov</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">qr_code_2</span>
+<span class="font-label-md text-label-md font-semibold">Pass Active • Unscanned</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Token: #TK-8842-A1</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-primary-container font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> Confirmed
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="h-8 px-2.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high text-label-sm font-label-sm inline-flex items-center gap-1" title="Admit directly without turnstile QR" type="button">
+<span class="material-symbols-outlined text-[16px]">login</span> Direct Check-In
+                  </button>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Rohan Mehta - Faculty Staff (Checked In) -->
+<tr class="bg-surface-container-low/30 hover:bg-surface-container-low/70 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center font-headline-sm text-headline-sm text-primary-container shrink-0">
+                    RM
+                  </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Rohan Mehta</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-surface-tint">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-tint"></span> Faculty Staff • Physics Dept
+                    </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">#7219</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">FAC-PHY-11</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-[16px]">pool</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Olympic Pool (Lane 4)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Aquatics Pavilion</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">16:00 – 17:00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Today • In Session</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 text-primary-container">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-md text-label-md font-semibold">Validated Gate P1 (15:54)</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Turnstile Card Tap</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-primary-container font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Checked In
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="h-8 px-2.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high text-label-sm font-label-sm inline-flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">logout</span> Check-Out
+                  </button>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Kavita Pillai - Varsity Athlete (Checked In) -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low/70 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-fixed-dim flex items-center justify-center font-headline-sm text-headline-sm text-primary-container shrink-0">
+                    KP
+                  </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Kavita Pillai</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Varsity Athlete • Tennis Team
+                    </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">#9104</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2022-ME-108</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-[16px]">sports_tennis</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Tennis Court 3 (Outdoor)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">North Courts Complex</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">16:30 – 18:00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Today • Extended Slot</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 text-primary-container">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-md text-label-md font-semibold">Validated Gate T3 (16:21)</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">NFC Student ID Validated</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-primary-container font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Checked In
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="h-8 px-2.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high text-label-sm font-label-sm inline-flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">swap_horiz</span> Move Court
+                  </button>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: David Chen - MSc Physics (No-Show flagged) -->
+<tr class="bg-surface-container-low/30 hover:bg-surface-container-low/70 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center font-headline-sm text-headline-sm text-on-surface-variant shrink-0">
+                    DC
+                  </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">David Chen</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span> MSc Physics • Year 1
+                    </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">#6340</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2024-PH-018</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-[16px]">sports_basketball</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Basketball Court B</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Indoor Arena</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">15:00 – 16:00</span>
+<span class="font-label-sm text-label-sm text-error">Grace Period Expired (25m)</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 text-error">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+<span class="font-label-md text-label-md font-semibold">Gate Gate B1 • Not Scanned</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Token #TK-6340 revoked</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-error"></span> No-show
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="h-8 px-2.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high text-label-sm font-label-sm inline-flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">autorenew</span> Release Court
+                  </button>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Siddharth Rao - B.Com Year 1 (Confirmed) -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low/70 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center font-headline-sm text-headline-sm text-primary-container shrink-0">
+                    SR
+                  </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Siddharth Rao</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span> B.Com Year 1
+                    </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">#4412</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2025-BC-091</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-[16px]">sports_soccer</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Football Turf 1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">South Field Astroturf</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">18:00 – 19:30</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Today • In 58 mins</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-label-md text-label-md font-semibold">Pass Ready • Turnstile F1</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Auto-activation at 17:45</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-primary-container font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> Confirmed
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="h-8 px-2.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high text-label-sm font-label-sm inline-flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">edit_calendar</span> Reschedule
+                  </button>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: Zoe Martinez - Exchange Student (Cancelled) -->
+<tr class="bg-surface-container-low/30 hover:bg-surface-container-low/70 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center font-headline-sm text-headline-sm text-on-surface-variant shrink-0">
+                    ZM
+                  </div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium text-on-surface truncate">Zoe Martinez</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span> Exchange Student • Spain
+                    </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">#3190</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2025-EX-004</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-outline shrink-0">
+<span class="material-symbols-outlined text-[16px]">sports_tennis</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-outline line-through">Badminton Court 2</span>
+<span class="font-label-sm text-label-sm text-outline">Released to Pool</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-outline">17:00 – 18:00</span>
+<span class="font-label-sm text-label-sm text-outline">Cancelled at 14:15</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 text-outline">
+<span class="material-symbols-outlined text-[16px]">block</span>
+<span class="font-label-md text-label-md">QR Deactivated</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Reason: Medical Excuse</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-outline"></span> Cancelled
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="h-8 px-2.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high text-label-sm font-label-sm" type="button">
+                    View Log
+                  </button>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Bottom Table Controls & Pagination -->
+<div class="pt-space-md mt-space-sm flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Showing <strong>1–6</strong> of <strong>142</strong> total campus bookings</span>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Per page:</span>
+<select class="h-8 px-2 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm border-0 focus:outline-none cursor-pointer">
+<option selected="">10</option>
+<option>25</option>
+<option>50</option>
+<option>100</option>
+</select>
+</div>
+</div>
+<!-- Center Pagination Numbers -->
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface flex items-center justify-center" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md" type="button">1</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high" type="button">2</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high" type="button">3</button>
+<span class="px-1 text-on-surface-variant">...</span>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high" type="button">15</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container-high flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+<!-- Bulk & Export Operations (Secondary Standard) -->
+<div class="flex items-center gap-2">
+<button class="h-9 px-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-primary-container font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Download CSV</span>
+</button>
+<button class="h-9 px-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-primary-container font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+<span>Gate Pass Sync</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Side Quick Action Desk: Turnstile & Walk-In Desk (xl:col-span-3) -->
+<div class="xl:col-span-3 flex flex-col gap-space-md">
+<!-- Walk-In Station Widget -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex flex-col">
+<div class="flex items-center justify-between pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">contactless</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Walk-in Desk</h3>
+</div>
+<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed-dim animate-pulse" title="Ready for NFC tap"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+          Issue immediate turnstile access token via physical campus RFID card tap or roll lookup.
+        </p>
+<!-- Tap or Input -->
+<div class="bg-surface-container-low p-space-sm rounded-xl mb-space-sm flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Tap University SmartCard or Enter ID</label>
+<div class="relative">
+<input class="w-full h-10 px-3 pr-8 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm border-0 focus:outline-none" placeholder="Swipe ID or type roll e.g. 2023-CS-..." type="text"/>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-[18px]">credit_card</span>
+</div>
+</div>
+<!-- Facility Allocation -->
+<div class="space-y-2 mb-space-md">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Select Vacant Slot / Court</label>
+<select class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm border-0 focus:outline-none cursor-pointer">
+<option>Badminton Court 2 (Released by Zoe M.) • 17:00</option>
+<option>Olympic Pool • Lane 1 • 17:00</option>
+<option>Tennis Court 1 • Outdoor • 17:30</option>
+<option>Table Tennis Table 4 • 17:00</option>
+</select>
+</div>
+<button class="w-full h-11 rounded-xl bg-primary-container text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-2 hover:opacity-95 transition-opacity" type="button">
+<span class="material-symbols-outlined text-[18px]">key</span>
+<span>Generate Instant Pass</span>
+</button>
+</div>
+<!-- Quick Court Occupancy Radar (Graphic Visual Block) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex flex-col">
+<div class="flex items-center justify-between pb-3">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">17:00 Court Utilization</h3>
+<span class="font-label-sm text-label-sm text-surface-tint font-semibold">21 / 24 Occupied</span>
+</div>
+<!-- Court Schematic Visual Bar -->
+<div class="w-full h-3 rounded-full bg-surface-container overflow-hidden flex mb-space-sm">
+<div class="bg-primary-container h-full" style="width: 72%;" title="72% Confirmed Student Slots"></div>
+<div class="bg-primary-fixed h-full" style="width: 15%;" title="15% Checked-In Live"></div>
+<div class="bg-secondary h-full" style="width: 6%;" title="6% Varsity Hold"></div>
+<div class="bg-surface-container-high h-full" style="width: 7%;" title="7% Vacant"></div>
+</div>
+<!-- Graphic Court Status Matrix -->
+<div class="grid grid-cols-3 gap-2 text-center pt-2">
+<div class="p-2 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Badminton</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">5 / 6</span>
+<span class="font-body-sm text-body-sm text-primary-fixed-dim text-[11px] font-medium">1 Open (Ct 2)</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pool Lanes</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">8 / 8</span>
+<span class="font-body-sm text-body-sm text-secondary text-[11px] font-medium">At Capacity</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tennis Cts</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">3 / 4</span>
+<span class="font-body-sm text-body-sm text-primary-fixed-dim text-[11px] font-medium">1 Open (Ct 1)</span>
+</div>
+</div>
+<!-- Emergency Override Link -->
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">System curfew lock: <strong>22:30</strong></span>
+<button class="font-label-md text-label-md text-secondary hover:underline flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">lock_reset</span> Curfew Override
+          </button>
+</div>
+</div>
+<!-- Turnstile Gate Health Diagnostics -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex flex-col">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Turnstile Gate Hardware</span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-surface-tint">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span> 4 Online
+          </span>
+</div>
+<div class="space-y-2.5">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-surface-tint">check_circle</span>
+              Gate A (Badminton / Gym)
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">34ms • Ping OK</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-surface-tint">check_circle</span>
+              Gate B (Indoor Arena)
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">28ms • Ping OK</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-surface-tint">check_circle</span>
+              Gate P1 (Olympic Pool)
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">41ms • Ping OK</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-surface-tint">check_circle</span>
+              Gate T (North Tennis Courts)
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">52ms • Ping OK</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></main><footer class="w-full bg-surface-container-low border-t border-outline-variant/30 py-space-lg text-on-surface-variant"><div class="max-w-7xl mx-auto px-margin flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex flex-col md:flex-row items-center gap-space-sm md:gap-space-md"><span class="font-body-md-medium text-body-md-medium text-on-surface">Campus Sports • Facilities Management Portal</span><span class="hidden md:inline text-outline-variant">•</span><span class="font-body-sm text-body-sm text-on-surface-variant">© 2025 Collegiate Athletics Division</span></div><div class="flex items-center gap-space-lg"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Emergency Protocol</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Maintenance Log</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Staff Help Desk</a></div></div></footer></body></html>

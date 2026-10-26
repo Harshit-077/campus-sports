@@ -7,7 +7,7 @@ from fastapi import APIRouter, Query, Request
 from pymongo import ReturnDocument
 from pymongo.errors import DuplicateKeyError
 
-from app.deps import AdminUser, Database, OptionalUser
+from app.deps import AdminUser, Database, Now, OptionalUser, SettingsDep
 from app.errors import AppError
 from app.ids import parse_object_id
 from app.models.facility import (
@@ -18,7 +18,7 @@ from app.models.facility import (
     days_with_too_short_windows,
 )
 from app.models.sport import AttributeDef
-from app.services.facilities import load_facility, query_facilities
+from app.services.facilities import attach_availability, load_facility, query_facilities
 from app.services.metadata import coerce_filter_value, validate_metadata
 
 router = APIRouter(prefix="/facilities", tags=["facilities"])
@@ -61,9 +61,12 @@ async def list_facilities(
     request: Request,
     db: Database,
     user: OptionalUser,
+    settings: SettingsDep,
+    now: Now,
     sport_id: str | None = None,
     q: Annotated[str | None, Query(max_length=50)] = None,
     include_inactive: bool = False,
+    with_availability: bool = False,
 ) -> list[FacilityOut]:
     """Public list of facilities, each with its sport joined in.
 
@@ -71,6 +74,7 @@ async def list_facilities(
     `meta.<attribute>=<value>` for any attribute the sport defines (requires `sport_id`),
     e.g. `?sport_id=...&meta.surface=wooden&meta.air_conditioning=true`.
     `include_inactive=true` is admin-only.
+    `with_availability=true` adds today's open-slot count and next free slot to each active facility.
     """
     match: dict[str, Any] = {}
 
@@ -116,7 +120,10 @@ async def list_facilities(
         pattern = {"$regex": re.escape(q.strip()), "$options": "i"}
         match["$or"] = [{"name": pattern}, {"location": pattern}]
 
-    return await query_facilities(db, match)
+    facilities = await query_facilities(db, match)
+    if with_availability:
+        await attach_availability(db, facilities, now, settings.tz)
+    return facilities
 
 
 @router.get("/{facility_id}", response_model=FacilityOut)
