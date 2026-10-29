@@ -1,0 +1,830 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"inverse-on-surface":"#e8f3ed","surface-container-lowest":"#ffffff","primary-fixed-dim":"#a8cfbd","on-tertiary-fixed":"#151d19","background":"#f1fcf5","surface-container-high":"#dfebe4","inverse-surface":"#28332e","on-primary-container":"#7da291","surface-variant":"#dae5df","surface":"#f1fcf5","surface-dim":"#d1ddd6","surface-bright":"#f1fcf5","primary-container":"#14382b","surface-container-highest":"#dae5df","secondary-fixed-dim":"#ffb59d","outline-variant":"#c1c8c3","on-secondary":"#ffffff","on-primary":"#ffffff","primary":"#002217","error":"#ba1a1a","surface-tint":"#426656","primary-fixed":"#c4ebd8","on-error":"#ffffff","outline":"#717974","secondary":"#ab3500","on-error-container":"#93000a","on-primary-fixed-variant":"#2a4d3f","surface-container-low":"#ebf6f0","on-tertiary-fixed-variant":"#404944","on-secondary-fixed":"#390c00","secondary-fixed":"#ffdbd0","error-container":"#ffdad6","tertiary-fixed":"#dce5de","on-background":"#141e1a","on-secondary-fixed-variant":"#832600","surface-container":"#e5f1ea","tertiary-fixed-dim":"#c0c9c2","on-surface":"#141e1a","tertiary":"#171f1b","on-primary-fixed":"#002116","secondary-container":"#fe6a34","tertiary-container":"#2b342f","inverse-primary":"#a8cfbd","on-secondary-container":"#5d1900","on-tertiary":"#ffffff","on-surface-variant":"#414844","on-tertiary-container":"#939c96"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-xl":"2.5rem","margin":"2rem","space-md":"1rem","space-sm":"0.5rem","space-lg":"1.5rem","gutter":"1.5rem","margin-mobile":"1rem","gutter-mobile":"0.75rem","space-xs":"0.25rem"},fontFamily:{"body-md":["Inter"],"headline-lg-mobile":["Sora"],"headline-lg":["Sora"],"stat-display":["Sora"],"headline-xl":["Sora"],"body-sm":["Inter"],"headline-md":["Sora"],"label-sm":["Inter"],"headline-sm":["Sora"],"label-lg":["Inter"],"headline-xl-mobile":["Sora"],"body-md-medium":["Inter"],"body-lg":["Inter"],"label-md":["Inter"]},fontSize:{"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"600"}],"stat-display":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"500"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-xl-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md-medium":["14px",{"lineHeight":"20px","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-primary-container border-b border-outline-variant/30"><div class="max-w-7xl mx-auto px-margin-mobile md:px-margin h-16 flex items-center justify-between"><a class="flex items-center gap-space-sm group focus:outline-none" data-path="campus-sports-home" href="#"><div class="w-9 h-9 rounded-lg bg-tertiary-fixed flex items-center justify-center text-primary-container"><span class="material-symbols-outlined text-[20px]">sports_score</span></div><span class="font-headline-sm text-headline-sm text-surface-container-lowest tracking-tight">Campus Sports</span></a><div class="flex items-center gap-space-lg"><nav class="hidden sm:flex items-center gap-space-md" data-active-classes="text-surface-container-lowest font-body-md-medium"><a class="font-body-md text-body-md text-surface-variant hover:text-surface-container-lowest transition-colors" data-path="facility-directory" href="#">Facilities</a><a class="font-body-md text-body-md text-surface-variant hover:text-surface-container-lowest transition-colors" data-path="public-schedule" href="#">Schedule</a><a class="font-body-md text-body-md text-surface-variant hover:text-surface-container-lowest transition-colors" data-path="sign-in" href="#">Log in</a></nav><div class="flex items-center gap-space-sm"><a class="h-10 px-space-md bg-secondary-container text-on-secondary rounded-lg font-headline-sm text-label-lg flex items-center justify-center transition-opacity hover:opacity-90 focus:outline-none" data-path="register-account" href="#">Create an account</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center border border-outline-variant/40"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Hero Section (Deep Court Green) -->
+<section class="w-full bg-primary-container text-surface-container-lowest px-margin-mobile md:px-margin py-16 md:py-24 relative overflow-hidden" style="background-image: linear-gradient(135deg, rgba(20, 56, 43, 0.88) 0%, rgba(15, 38, 30, 0.94) 100%), url(&quot;https://lh3.googleusercontent.com/aida/AEtjO1U7ZXUvqqE3ep5awsjS-1HyXDItqyx3LvREwEeyWKuZpAzap1uqrCAzOhNEPXz3n_0MoBsAvwA3V2xPbKGklV_32BPm7Mb_i6q85Dccz2pqcJhqZCicO7miIlviZCuRCwP-oCw-37Ih845RDYTr9sYieAaj6reTqSZ9djmK_boXi1tfQt9HN3p8uKSKEURUJW3EqJ9WdCnBY5uTFTBjWypyeRIDKWJK2yldAN0SUzCdoA&quot;); background-size: cover; background-position: center center;"><img src="https://lh3.googleusercontent.com/aida/AEtjO1U7ZXUvqqE3ep5awsjS-1HyXDItqyx3LvREwEeyWKuZpAzap1uqrCAzOhNEPXz3n_0MoBsAvwA3V2xPbKGklV_32BPm7Mb_i6q85Dccz2pqcJhqZCicO7miIlviZCuRCwP-oCw-37Ih845RDYTr9sYieAaj6reTqSZ9djmK_boXi1tfQt9HN3p8uKSKEURUJW3EqJ9WdCnBY5uTFTBjWypyeRIDKWJK2yldAN0SUzCdoA" alt="Athletic sports pavilion and court" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-25 mix-blend-luminosity">
+<!-- Subtle architectural court schematic in background (vector line-work, 1.75px stroke) -->
+<div aria-hidden="true" class="absolute inset-0 pointer-events-none opacity-5 flex items-center justify-end pr-12 overflow-hidden">
+<svg class="text-surface-container-lowest" fill="none" height="480" stroke="currentColor" stroke-width="1.75" viewBox="0 0 680 480" width="680">
+<rect height="440" rx="16" width="640" x="20" y="20"></rect>
+<line x1="340" x2="340" y1="20" y2="460"></line>
+<circle cx="340" cy="240" r="70"></circle>
+<circle cx="340" cy="240" r="140" stroke-dasharray="8 8"></circle>
+<rect height="160" width="120" x="20" y="160"></rect>
+<rect height="160" width="120" x="540" y="160"></rect>
+</svg>
+</div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+<!-- Hero Copy Column -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<!-- Eyebrow Badge -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-lowest/10 w-fit">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-surface-variant font-medium">Campus Athletics Booking Platform</span>
+</div>
+<!-- Headline -->
+<h1 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-surface-container-lowest tracking-tight max-w-2xl leading-tight">
+          Book campus sports facilities without the guesswork.
+        </h1>
+<!-- Supporting Body -->
+<p class="font-body-lg text-body-lg text-surface-variant max-w-xl">
+          Check real-time availability across badminton courts, basketball arenas, football turfs, and the Olympic pool, and lock your slot in under 30 seconds.
+        </p>
+<!-- CTA Row -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<!-- Mandatory single main orange accent CTA -->
+<a class="h-12 px-7 bg-secondary-container hover:bg-[#e55a28] text-surface-container-lowest rounded-xl font-headline-sm text-label-lg flex items-center justify-center transition-all focus:outline-none focus:ring-2 focus:ring-secondary-container/40" data-path="register-account" href="#">
+            Create an account
+          </a>
+<!-- Outlined Secondary Button -->
+<a class="h-12 px-6 bg-transparent hover:bg-surface-container-lowest/10 text-surface-container-lowest rounded-xl font-body-md-medium text-body-md flex items-center justify-center transition-colors focus:outline-none" data-path="sign-in" href="#">
+            Log in
+          </a>
+<div class="flex items-center gap-2 text-surface-variant text-body-sm font-body-sm pl-2">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">verified</span>
+<span class="">Zero reservation booking fees</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive Miniature 'Live Court Availability Feed' -->
+<div class="lg:col-span-5 w-full">
+<div class="bg-surface-container-lowest/10 rounded-2xl p-6 backdrop-blur-sm">
+<div class="flex items-center justify-between pb-4">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+<span class="font-headline-sm text-headline-sm text-surface-container-lowest">Live Court Pulse</span>
+</div>
+<span class="font-label-sm text-label-sm text-surface-variant uppercase tracking-wider">Refreshed 4s ago</span>
+</div>
+<!-- Feed Items -->
+<div class="space-y-3 pt-2" id="heroPulseList">
+<!-- Feed 1: Badminton -->
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container-lowest/10 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest/15 flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">sports_tennis</span>
+</div>
+<div>
+<div class="font-headline-sm text-label-lg text-surface-container-lowest">Badminton Court 1</div>
+<div class="font-body-sm text-body-sm text-surface-variant">North Fieldhouse • Taraflex</div>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-[#1F7A4D]/30 text-emerald-300 font-label-sm text-label-sm">
+                Open Now • 2 slots left
+              </span>
+</div>
+<!-- Feed 2: Basketball -->
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container-lowest/10 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest/15 flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">sports_basketball</span>
+</div>
+<div>
+<div class="font-headline-sm text-label-lg text-surface-container-lowest">Basketball Court B</div>
+<div class="font-body-sm text-body-sm text-surface-variant">Main Arena • Hardwood Maple</div>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/20 text-surface-container-lowest font-label-sm text-label-sm">
+                Open 18:00
+              </span>
+</div>
+<!-- Feed 3: Football Turf -->
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container-lowest/10 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest/15 flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">sports_soccer</span>
+</div>
+<div>
+<div class="font-headline-sm text-label-lg text-surface-container-lowest">Football Turf</div>
+<div class="font-body-sm text-body-sm text-surface-variant">South Stadium • 4G Synthetic</div>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-[#9A6700]/30 text-amber-200 font-label-sm text-label-sm">
+                Varsity Training
+              </span>
+</div>
+<!-- Feed 4: Olympic Pool -->
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container-lowest/10 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest/15 flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">pool</span>
+</div>
+<div>
+<div class="font-headline-sm text-label-lg text-surface-container-lowest">Olympic Pool</div>
+<div class="font-body-sm text-body-sm text-surface-variant">Aquatics Pavilion • Heated 26°C</div>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-[#1F7A4D]/30 text-emerald-300 font-label-sm text-label-sm">
+                Open Lane 4
+              </span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-body-sm font-body-sm text-surface-variant">
+<span class="">Automated turnstile syncing active</span>
+<span class="inline-flex items-center gap-1 text-primary-fixed font-body-md-medium">
+              Live status <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Credibility & Stats Ribbon -->
+<section class="w-full bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin py-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
+<div class="flex flex-col">
+<span class="font-stat-display text-stat-display text-primary-container">14</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mt-1">Facilities Managed</span>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">Across 3 athletic campuses</span>
+</div>
+<div class="flex flex-col">
+<span class="font-stat-display text-stat-display text-primary-container">&lt; 30s</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mt-1">Avg Booking Time</span>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">Zero physical wait times</span>
+</div>
+<div class="flex flex-col">
+<span class="font-stat-display text-stat-display text-primary-container">1,400+</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mt-1">Active Students</span>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">Weekly booking verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-stat-display text-stat-display text-primary-container">100%</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mt-1">Turnstile Synced</span>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">Instant dynamic QR pass</span>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works Section -->
+<section class="w-full px-margin-mobile md:px-margin py-16 md:py-24">
+<div class="max-w-7xl mx-auto flex flex-col gap-12">
+<div class="max-w-xl">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Effortless Scheduling</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-2 tracking-tight">How it works</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+          Designed for collegiate speed. Secure reserved physical training time in three straightforward steps.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Step 1 -->
+<div class="bg-surface-container-lowest rounded-2xl p-7 flex flex-col gap-5">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center text-primary-container">
+<!-- 1.75px SVG icon stroke -->
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewBox="0 0 24 24" width="24">
+<circle cx="12" cy="12" r="9"></circle>
+<path d="M12 3v18"></path>
+<path d="M3 12h18"></path>
+<circle cx="12" cy="12" r="4"></circle>
+</svg>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Step 01</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1">Choose a sport</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
+              Explore 4 core sports and 14 campus venues with surface specifications, lighting lux, and air conditioning data.
+            </p>
+</div>
+<div class="mt-auto pt-4 flex items-center gap-2 text-body-sm font-body-sm text-outline">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span class="">Indoor &amp; floodlit outdoor fields</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-lowest rounded-2xl p-7 flex flex-col gap-5">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center text-primary-container">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewBox="0 0 24 24" width="24">
+<rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
+<line x1="16" x2="16" y1="2" y2="6"></line>
+<line x1="8" x2="8" y1="2" y2="6"></line>
+<line x1="3" x2="21" y1="10" y2="10"></line>
+<path d="M8 14h.01"></path>
+<path d="M12 14h.01"></path>
+<path d="M16 14h.01"></path>
+<path d="M8 18h.01"></path>
+<path d="M12 18h.01"></path>
+</svg>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Step 02</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1">Pick a time</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
+              View real-time 15-day forward rolling slots with instant conflict prevention. No queues, no clipboards.
+            </p>
+</div>
+<div class="mt-auto pt-4 flex items-center gap-2 text-body-sm font-body-sm text-outline">
+<span class="material-symbols-outlined text-[16px]">lock_clock</span>
+<span class="">Atomic 90-second seat holding</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-lowest rounded-2xl p-7 flex flex-col gap-5">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center text-primary-container">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewBox="0 0 24 24" width="24">
+<rect height="7" rx="1" width="7" x="3" y="3"></rect>
+<rect height="7" rx="1" width="7" x="14" y="3"></rect>
+<rect height="7" rx="1" width="7" x="3" y="14"></rect>
+<path d="M14 14h3v3h-3z"></path>
+<path d="M20 14v3h-3"></path>
+<path d="M14 20h7"></path>
+</svg>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Step 03</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1">Show up and play</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
+              Receive an instant digital turnstile QR gate pass on your phone for seamless 1-tap facility entry.
+            </p>
+</div>
+<div class="mt-auto pt-4 flex items-center gap-2 text-body-sm font-body-sm text-outline">
+<span class="material-symbols-outlined text-[16px]">contactless</span>
+<span class="">Apple / Google Wallet compatible</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Sport Directory Row -->
+<section class="w-full bg-surface-container-low px-margin-mobile md:px-margin py-16 md:py-20">
+<div class="max-w-7xl mx-auto flex flex-col gap-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Sports Inventory</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1 tracking-tight">Select your activity</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Tap a sport to view venue availability specifications.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Active Venue Filter:</span>
+<span class="font-body-md-medium text-body-md text-primary-container px-3 py-1 bg-surface-container rounded-full" id="activeSportLabel">
+            All Sports
+          </span>
+</div>
+</div>
+<!-- Sports Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="sportCardsContainer">
+<!-- Card 1: Badminton -->
+<div class="sport-card cursor-pointer bg-surface-container-lowest rounded-2xl p-6 transition-all hover:bg-surface-container-low flex flex-col gap-4" data-sport="Badminton">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-primary-container flex items-center justify-center">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewBox="0 0 24 24" width="24">
+<path d="M12 2a5 5 0 0 0-5 5c0 2.2 1.4 4.1 3.4 4.7l-4.4 7.3a1 1 0 0 0 .8 1.5h10.4a1 1 0 0 0 .8-1.5l-4.4-7.3c2-.6 3.4-2.5 3.4-4.7a5 5 0 0 0-5-5z"></path>
+<path d="M12 7v5"></path>
+<path d="M9.5 9.5l5 0"></path>
+</svg>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+              Racquet
+            </span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Badminton</h3>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">4 Courts • 12 Slots Today</p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="inline-flex items-center gap-1.5 text-body-sm font-body-sm text-emerald-800">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+              9 Open Slots
+            </span>
+<a class="font-label-lg text-label-lg text-primary-container flex items-center gap-1 hover:underline" data-path="facility-directory" href="#">
+              Venues <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Card 2: Football -->
+<div class="sport-card cursor-pointer bg-surface-container-lowest rounded-2xl p-6 transition-all hover:bg-surface-container-low flex flex-col gap-4" data-sport="Football">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-primary-container flex items-center justify-center">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewBox="0 0 24 24" width="24">
+<circle cx="12" cy="12" r="9"></circle>
+<polygon points="12 8 8.5 10.5 9.8 14.5 14.2 14.5 15.5 10.5 12 8"></polygon>
+<line x1="12" x2="12" y1="3" y2="8"></line>
+<line x1="12" x2="12" y1="16" y2="21"></line>
+<line x1="3.5" x2="8.5" y1="9" y2="10.5"></line>
+<line x1="20.5" x2="15.5" y1="9" y2="10.5"></line>
+</svg>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+              Team
+            </span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Football</h3>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">2 Turfs • 6 Slots Today</p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="inline-flex items-center gap-1.5 text-body-sm font-body-sm text-amber-800">
+<span class="w-2 h-2 rounded-full bg-amber-600"></span>
+              Peak Demand
+            </span>
+<a class="font-label-lg text-label-lg text-primary-container flex items-center gap-1 hover:underline" data-path="facility-directory" href="#">
+              Venues <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Card 3: Basketball -->
+<div class="sport-card cursor-pointer bg-surface-container-lowest rounded-2xl p-6 transition-all hover:bg-surface-container-low flex flex-col gap-4" data-sport="Basketball">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-primary-container flex items-center justify-center">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewBox="0 0 24 24" width="24">
+<circle cx="12" cy="12" r="9"></circle>
+<line x1="3" x2="21" y1="12" y2="12"></line>
+<path d="M5.5 5.5c4 3 4 10 0 13"></path>
+<path d="M18.5 5.5c-4 3-4 10 0 13"></path>
+</svg>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+              Hardwood
+            </span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Basketball</h3>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">3 Arenas • 8 Slots Today</p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="inline-flex items-center gap-1.5 text-body-sm font-body-sm text-emerald-800">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+              4 Open Slots
+            </span>
+<a class="font-label-lg text-label-lg text-primary-container flex items-center gap-1 hover:underline" data-path="facility-directory" href="#">
+              Venues <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Card 4: Swimming -->
+<div class="sport-card cursor-pointer bg-surface-container-lowest rounded-2xl p-6 transition-all hover:bg-surface-container-low flex flex-col gap-4" data-sport="Swimming">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-primary-container flex items-center justify-center">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewBox="0 0 24 24" width="24">
+<path d="M2 18c2.5 1.5 5 1.5 7.5 0s5-1.5 7.5 0 5 1.5 7 0"></path>
+<path d="M2 13c2.5 1.5 5 1.5 7.5 0s5-1.5 7.5 0 5 1.5 7 0"></path>
+<circle cx="16" cy="6" r="2"></circle>
+<path d="M7 9l4 2 3-2"></path>
+</svg>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+              Aquatic
+            </span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Swimming</h3>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">8 Lanes • 18 Slots Today</p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="inline-flex items-center gap-1.5 text-body-sm font-body-sm text-emerald-800">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+              Lane 3 &amp; 4 Open
+            </span>
+<a class="font-label-lg text-label-lg text-primary-container flex items-center gap-1 hover:underline" data-path="facility-directory" href="#">
+              Venues <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Informational Guarantee Band -->
+<section class="w-full px-margin-mobile md:px-margin py-8">
+<div class="max-w-7xl mx-auto">
+<div class="bg-tertiary-fixed rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-surface-container-lowest flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">shield</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+              No double bookings: a slot can only be held by one person at a time.
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-3xl">
+              Our atomic turnstile reservation lock prevents race conditions and ensures immediate student validation. When you select a slot, it is cryptographically locked for 90 seconds while you confirm.
+            </p>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-2">
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-primary-container font-label-md text-label-md">
+            ISO-Compliant Sync
+          </span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Live Timetable Sneak Peek / Campus Court Pulse -->
+<section class="w-full px-margin-mobile md:px-margin py-16 md:py-20">
+<div class="max-w-7xl mx-auto flex flex-col gap-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Campus Court Pulse</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1 tracking-tight">Interactive Timetable Sneak Peek</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Test the live 6-state slot engine. Click any available slot to preview reservation locking.
+          </p>
+</div>
+<!-- 6-State Visual Legend -->
+<div class="flex flex-wrap items-center gap-3 bg-surface-container-lowest p-3 rounded-xl text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="w-3.5 h-3.5 rounded bg-surface-container-lowest"></span>
+<span class="">Available</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3.5 h-3.5 rounded bg-secondary-container"></span>
+<span class="">Selected</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3.5 h-3.5 rounded bg-[#E5ECE7]"></span>
+<span class="">Booked</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3.5 h-3.5 rounded bg-[#1F7A4D] flex items-center justify-center text-white text-[9px]">✓</span>
+<span class="">Booked by Me</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3.5 h-3.5 rounded" style="background: repeating-linear-gradient(45deg, #E5ECE7, #E5ECE7 4px, #F1F5F2 4px, #F1F5F2 8px);"></span>
+<span class="">Maintenance</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3.5 h-3.5 rounded bg-transparent text-[#A8B5AE] text-[10px] flex items-center justify-center">✕</span>
+<span class="">Past</span>
+</div>
+</div>
+</div>
+<!-- Schedule Matrix Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 md:p-8 flex flex-col gap-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Fieldhouse Arena: Court Matrix A</div>
+<div class="font-body-sm text-body-sm text-outline">Today • Sessions in 60-minute blocks</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-9 h-9 rounded-lg bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface" id="dayPrevBtn">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="font-body-md-medium text-body-md px-3 py-1 bg-surface-container-low rounded-lg">Today, 24 Oct</span>
+<button class="w-9 h-9 rounded-lg bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface" id="dayNextBtn">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Matrix Timeline -->
+<div class="overflow-x-auto">
+<div class="min-w-[680px] space-y-4">
+<!-- Row 1: Badminton Court 1 -->
+<div class="flex items-center gap-4">
+<div class="w-36 shrink-0">
+<span class="font-headline-sm text-label-md text-on-surface block">Badminton 01</span>
+<span class="font-body-sm text-body-sm text-outline">Taraflex 1</span>
+</div>
+<div class="grid grid-cols-6 gap-2.5 flex-1" id="courtRow1">
+<!-- Slot 1: Past -->
+<div class="h-11 rounded-xl flex items-center justify-center text-body-sm font-body-sm text-[#A8B5AE] cursor-not-allowed select-none bg-surface-container-low line-through">
+                  08:00
+                </div>
+<!-- Slot 2: Booked by me -->
+<div class="h-11 rounded-xl bg-[#1F7A4D] text-surface-container-lowest flex items-center justify-center gap-1 text-body-sm font-body-sm font-medium shadow-sm cursor-default">
+<span class="material-symbols-outlined text-[14px]">check</span> 10:00
+                </div>
+<!-- Slot 3: Booked (others) -->
+<div class="h-11 rounded-xl bg-[#E5ECE7] text-[#8A9A92] flex items-center justify-center text-body-sm font-body-sm cursor-not-allowed select-none">
+                  12:00
+                </div>
+<!-- Slot 4: Available (interactive) -->
+<button class="slot-btn h-11 rounded-xl bg-surface-container-lowest text-on-surface font-body-md-medium text-body-md flex items-center justify-center transition-all hover:bg-surface-container" data-court="Badminton 01" data-time="14:00" type="button">
+                  14:00
+                </button>
+<!-- Slot 5: Available (interactive) -->
+<button class="slot-btn h-11 rounded-xl bg-surface-container-lowest text-on-surface font-body-md-medium text-body-md flex items-center justify-center transition-all hover:bg-surface-container" data-court="Badminton 01" data-time="16:00" type="button">
+                  16:00
+                </button>
+<!-- Slot 6: Booked (others) -->
+<div class="h-11 rounded-xl bg-[#E5ECE7] text-[#8A9A92] flex items-center justify-center text-body-sm font-body-sm cursor-not-allowed select-none">
+                  18:00
+                </div>
+</div>
+</div>
+<!-- Row 2: Basketball Court B -->
+<div class="flex items-center gap-4">
+<div class="w-36 shrink-0">
+<span class="font-headline-sm text-label-md text-on-surface block">Basketball B</span>
+<span class="font-body-sm text-body-sm text-outline">Hardwood</span>
+</div>
+<div class="grid grid-cols-6 gap-2.5 flex-1" id="courtRow2">
+<!-- Slot 1: Past -->
+<div class="h-11 rounded-xl flex items-center justify-center text-body-sm font-body-sm text-[#A8B5AE] cursor-not-allowed select-none bg-surface-container-low line-through">
+                  08:00
+                </div>
+<!-- Slot 2: Booked (others) -->
+<div class="h-11 rounded-xl bg-[#E5ECE7] text-[#8A9A92] flex items-center justify-center text-body-sm font-body-sm cursor-not-allowed select-none">
+                  10:00
+                </div>
+<!-- Slot 3: Maintenance -->
+<div class="h-11 rounded-xl flex items-center justify-center text-body-sm font-body-sm text-on-surface-variant cursor-not-allowed select-none" style="background: repeating-linear-gradient(45deg, #E5ECE7, #E5ECE7 8px, #F1F5F2 8px, #F1F5F2 16px);">
+<span class="text-xs">Maint.</span>
+</div>
+<!-- Slot 4: Available (interactive) -->
+<button class="slot-btn h-11 rounded-xl bg-surface-container-lowest text-on-surface font-body-md-medium text-body-md flex items-center justify-center transition-all hover:bg-surface-container" data-court="Basketball B" data-time="14:00" type="button">
+                  14:00
+                </button>
+<!-- Slot 5: Available (interactive) -->
+<button class="slot-btn h-11 rounded-xl bg-surface-container-lowest text-on-surface font-body-md-medium text-body-md flex items-center justify-center transition-all hover:bg-surface-container" data-court="Basketball B" data-time="16:00" type="button">
+                  16:00
+                </button>
+<!-- Slot 6: Available (interactive) -->
+<button class="slot-btn h-11 rounded-xl bg-surface-container-lowest text-on-surface font-body-md-medium text-body-md flex items-center justify-center transition-all hover:bg-surface-container" data-court="Basketball B" data-time="18:00" type="button">
+                  18:00
+                </button>
+</div>
+</div>
+<!-- Row 3: Olympic Pool (Lane 4) -->
+<div class="flex items-center gap-4">
+<div class="w-36 shrink-0">
+<span class="font-headline-sm text-label-md text-on-surface block">Pool Lane 04</span>
+<span class="font-body-sm text-body-sm text-outline">50m Lap</span>
+</div>
+<div class="grid grid-cols-6 gap-2.5 flex-1" id="courtRow3">
+<!-- Slot 1: Past -->
+<div class="h-11 rounded-xl flex items-center justify-center text-body-sm font-body-sm text-[#A8B5AE] cursor-not-allowed select-none bg-surface-container-low line-through">
+                  08:00
+                </div>
+<!-- Slot 2: Available (interactive) -->
+<button class="slot-btn h-11 rounded-xl bg-surface-container-lowest text-on-surface font-body-md-medium text-body-md flex items-center justify-center transition-all hover:bg-surface-container" data-court="Pool Lane 04" data-time="10:00" type="button">
+                  10:00
+                </button>
+<!-- Slot 3: Booked (others) -->
+<div class="h-11 rounded-xl bg-[#E5ECE7] text-[#8A9A92] flex items-center justify-center text-body-sm font-body-sm cursor-not-allowed select-none">
+                  12:00
+                </div>
+<!-- Slot 4: Booked (others) -->
+<div class="h-11 rounded-xl bg-[#E5ECE7] text-[#8A9A92] flex items-center justify-center text-body-sm font-body-sm cursor-not-allowed select-none">
+                  14:00
+                </div>
+<!-- Slot 5: Available (interactive) -->
+<button class="slot-btn h-11 rounded-xl bg-surface-container-lowest text-on-surface font-body-md-medium text-body-md flex items-center justify-center transition-all hover:bg-surface-container" data-court="Pool Lane 04" data-time="16:00" type="button">
+                  16:00
+                </button>
+<!-- Slot 6: Booked (others) -->
+<div class="h-11 rounded-xl bg-[#E5ECE7] text-[#8A9A92] flex items-center justify-center text-body-sm font-body-sm cursor-not-allowed select-none">
+                  18:00
+                </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Selection Summary Bar -->
+<div class="bg-surface-container p-4 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 hidden" id="selectionSummary">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-surface-container-lowest flex items-center justify-center text-xs font-bold">
+              ✓
+            </div>
+<div>
+<span class="font-headline-sm text-label-md text-on-surface">Slot held for you: </span>
+<span class="font-body-md text-body-md text-on-surface-variant font-medium" id="selectedSlotText">None</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-outline">Lock expires in <strong class="text-secondary" id="countdownTimer">01:30</strong></span>
+<a class="px-4 py-2 bg-primary-container text-surface-container-lowest font-body-md-medium text-body-sm rounded-lg hover:opacity-90" data-path="register-account" href="#">
+              Continue to Confirm
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Student & Admin Role Highlights -->
+<section class="w-full bg-surface-container-low px-margin-mobile md:px-margin py-16 md:py-24">
+<div class="max-w-7xl mx-auto flex flex-col gap-12">
+<div class="max-w-2xl">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Dual Platform Experience</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-2 tracking-tight">Tailored for athletes and facility directors</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+          Whether you are squeezing in a match between lectures or managing complex varsity division schedules, the system provides zero-friction tools.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Student Role Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-8 flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">school</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+              Student / Player Portal
+            </span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">For Students &amp; Recreational Players</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
+              Book within seconds right from your smartphone. No more queuing outside the sports office or waiting for confirmation emails.
+            </p>
+</div>
+<div class="space-y-3 pt-2">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-emerald-700 text-[20px] mt-0.5">check_circle</span>
+<div>
+<strong class="font-headline-sm text-label-md text-on-surface block">Mobile-first slot reservations</strong>
+<span class="font-body-sm text-body-sm text-outline">Search by preferred sport, surface type, or time slot.</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-emerald-700 text-[20px] mt-0.5">check_circle</span>
+<div>
+<strong class="font-headline-sm text-label-md text-on-surface block">Turnstile Gate Pass QR</strong>
+<span class="font-body-sm text-body-sm text-outline">Instant high-security turnstile barcode directly on lock screen.</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-emerald-700 text-[20px] mt-0.5">check_circle</span>
+<div>
+<strong class="font-headline-sm text-label-md text-on-surface block">Peer invites &amp; equipment reservation</strong>
+<span class="font-body-sm text-body-sm text-outline">Split court times and add shuttlecocks, balls, or towels in 1 tap.</span>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-6">
+<a class="inline-flex items-center gap-2 font-headline-sm text-label-lg text-primary-container hover:underline" data-path="register-account" href="#">
+<span class="">Explore student features</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Admin Role Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-8 flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">admin_panel_settings</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+              Athletics Staff Portal
+            </span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">For Facility Managers &amp; Coaches</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
+              Complete oversight over venue maintenance cycles, inter-collegiate tournaments, turnstile footfall, and roster lockouts.
+            </p>
+</div>
+<div class="space-y-3 pt-2">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-emerald-700 text-[20px] mt-0.5">check_circle</span>
+<div>
+<strong class="font-headline-sm text-label-md text-on-surface block">Full Schedule Master Matrix</strong>
+<span class="font-body-sm text-body-sm text-outline">Block out courts for team practice, deep cleans, or repairs.</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-emerald-700 text-[20px] mt-0.5">check_circle</span>
+<div>
+<strong class="font-headline-sm text-label-md text-on-surface block">Real-time Turnstile Monitoring</strong>
+<span class="font-body-sm text-body-sm text-outline">Audit campus ID taps, prevent unauthorized entries, and view occupancy.</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-emerald-700 text-[20px] mt-0.5">check_circle</span>
+<div>
+<strong class="font-headline-sm text-label-md text-on-surface block">Roster overrides &amp; priority scheduling</strong>
+<span class="font-body-sm text-body-sm text-outline">Prioritize varsity matches and intramural league matches automatically.</span>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-6">
+<a class="inline-flex items-center gap-2 font-headline-sm text-label-lg text-primary-container hover:underline" data-path="help-desk" href="#">
+<span class="">View manager documentation</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final Call to Action Section (Calm Minimal) -->
+<section class="w-full bg-surface-container-lowest px-margin-mobile md:px-margin py-16 md:py-20">
+<div class="max-w-4xl mx-auto text-center flex flex-col items-center gap-6">
+<div class="w-14 h-14 rounded-2xl bg-tertiary-fixed text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">sports</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+        Ready to take the court today?
+      </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+        Sign in with your university student or staff credentials for immediate booking rights across all campus athletics locations.
+      </p>
+<div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+<a class="h-12 px-8 bg-primary-container text-surface-container-lowest rounded-xl font-headline-sm text-label-lg flex items-center justify-center transition-opacity hover:opacity-90" data-path="register-account" href="#">
+          Get Started with Student ID
+        </a>
+<a class="h-12 px-6 bg-surface-container text-on-surface rounded-xl font-body-md-medium text-body-md flex items-center justify-center transition-colors hover:bg-surface-container-high" data-path="public-schedule" href="#">
+          View Master Calendar
+        </a>
+</div>
+</div>
+</section>
+</div>
+<script>
+  (function initLandingInteractions() {
+    // Sport Cards Interactive Selection
+    const sportCards = document.querySelectorAll('.sport-card');
+    const activeLabel = document.getElementById('activeSportLabel');
+
+    sportCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const sportName = card.getAttribute('data-sport');
+        const isActive = card.classList.contains('ring-2');
+
+        sportCards.forEach(c => {
+          c.classList.remove('ring-2', 'ring-primary-container', 'bg-surface-container-low');
+        });
+
+        if (!isActive) {
+          card.classList.add('ring-2', 'ring-primary-container', 'bg-surface-container-low');
+          if (activeLabel) activeLabel.textContent = sportName;
+        } else {
+          if (activeLabel) activeLabel.textContent = 'All Sports';
+        }
+      });
+    });
+
+    // Court Matrix Slot Interactive State Machine
+    const slotButtons = document.querySelectorAll('.slot-btn');
+    const summaryBox = document.getElementById('selectionSummary');
+    const summaryText = document.getElementById('selectedSlotText');
+    const timerDisplay = document.getElementById('countdownTimer');
+    let activeSlot = null;
+    let timerInterval = null;
+
+    function startTimer(durationInSeconds) {
+      clearInterval(timerInterval);
+      let timeLeft = durationInSeconds;
+      timerInterval = setInterval(() => {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        if (timerDisplay) {
+          timerDisplay.textContent = 
+            (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+        }
+        if (--timeLeft < 0) {
+          clearInterval(timerInterval);
+          if (activeSlot) {
+            deselectSlot(activeSlot);
+          }
+        }
+      }, 1000);
+    }
+
+    function deselectSlot(btn) {
+      btn.classList.remove('bg-secondary-container', 'text-white');
+      btn.classList.add('bg-surface-container-lowest', 'text-on-surface');
+      if (summaryBox) summaryBox.classList.add('hidden');
+      activeSlot = null;
+      clearInterval(timerInterval);
+    }
+
+    function selectSlot(btn) {
+      if (activeSlot && activeSlot !== btn) {
+        deselectSlot(activeSlot);
+      }
+      btn.classList.remove('bg-surface-container-lowest', 'text-on-surface');
+      btn.classList.add('bg-secondary-container', 'text-white');
+      activeSlot = btn;
+
+      const time = btn.getAttribute('data-time');
+      const court = btn.getAttribute('data-court');
+      if (summaryText) summaryText.textContent = court + ' • ' + time + ' (Today)';
+      if (summaryBox) summaryBox.classList.remove('hidden');
+
+      startTimer(90);
+    }
+
+    slotButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (btn === activeSlot) {
+          deselectSlot(btn);
+        } else {
+          selectSlot(btn);
+        }
+      });
+    });
+
+    // Day Prev/Next Micro-interactions
+    const prevBtn = document.getElementById('dayPrevBtn');
+    const nextBtn = document.getElementById('dayNextBtn');
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevBtn.classList.add('scale-95');
+        setTimeout(() => prevBtn.classList.remove('scale-95'), 150);
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextBtn.classList.add('scale-95');
+        setTimeout(() => nextBtn.classList.remove('scale-95'), 150);
+      });
+    }
+  })();
+</script></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant/30 mt-auto"><div class="max-w-7xl mx-auto px-margin-mobile md:px-margin py-space-xl flex flex-col md:flex-row md:items-center justify-between gap-space-lg"><div class="flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs text-primary-container font-headline-sm text-headline-sm"><span class="material-symbols-outlined text-[18px]">stadium</span><span class="">Collegiate Athletics Division</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 Collegiate Athletics Division. All rights reserved.</p></div><nav class="flex flex-wrap items-center gap-x-space-lg gap-y-space-sm" data-active-classes="text-primary-container font-body-md-medium"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="facility-rules" href="#">Facility Rules</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="equipment-hire" href="#">Equipment Hire</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="help-desk" href="#">Help Desk</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="student-guidelines" href="#">Student Guidelines</a></nav></div></footer>
+
+
+
+</body></html>
