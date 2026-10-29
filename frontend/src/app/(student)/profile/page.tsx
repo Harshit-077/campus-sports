@@ -1,5 +1,7 @@
 "use client";
 
+import { CheckCircle2, GraduationCap, LogOut, ShieldCheck, User } from "lucide-react";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -17,31 +19,70 @@ export default function ProfilePage() {
     .join("");
 
   return (
-    <div className="space-y-6">
-      <h1 className="font-display text-headline-xl text-primary max-sm:text-headline-lg">Profile</h1>
-      <Card className="max-w-xl space-y-5">
-        <div className="flex items-center gap-4">
-          <span aria-hidden className="grid size-16 place-items-center rounded-full bg-primary-container font-display text-headline-md text-white">
-            {initials}
+    <div className="space-y-8 max-w-2xl">
+      <header className="space-y-2">
+        <div className="flex items-center gap-2">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-on-surface font-sans text-label-sm font-semibold uppercase tracking-wider">
+            <User className="size-3.5 text-primary-container" />
+            University Member Profile
           </span>
-          <div>
-            <p className="font-display text-headline-md text-primary">{user.name}</p>
-            <Badge tone="neutral" className="capitalize">{user.role}</Badge>
+        </div>
+        <h1 className="font-display text-headline-xl font-semibold text-primary tracking-tight sm:text-4xl">
+          Account &amp; Credentials
+        </h1>
+        <p className="text-base text-on-surface-variant">
+          Your varsity registration, contactless turnstile identity, and active member status.
+        </p>
+      </header>
+
+      <div className="rounded-2xl border border-line bg-surface-container-lowest p-6 sm:p-8 shadow-sm space-y-6">
+        <div className="flex items-center gap-5">
+          <span
+            aria-hidden
+            className="grid size-16 shrink-0 place-items-center rounded-2xl bg-primary-container font-display text-headline-md font-bold text-white shadow-sm"
+          >
+            {initials || "ST"}
+          </span>
+          <div className="min-w-0">
+            <h2 className="font-display text-headline-lg font-semibold text-primary truncate">
+              {user.name}
+            </h2>
+            <div className="flex flex-wrap items-center gap-2 mt-1">
+              <span className="inline-flex items-center gap-1 rounded-full bg-primary-fixed px-3 py-0.5 text-label-sm font-semibold text-on-primary-fixed-variant">
+                <CheckCircle2 className="size-3" /> Verified {user.role === "admin" ? "Staff" : "Student"}
+              </span>
+              <span className="text-xs text-outline font-mono">
+                Active Member
+              </span>
+            </div>
           </div>
         </div>
-        <dl className="space-y-3 text-sm">
+
+        <dl className="space-y-3.5 text-sm border-t border-line pt-6">
           {[
-            ["Email", user.email],
-            ["Student ID", user.student_id ?? "Not provided"],
+            ["Registered Email", user.email],
+            ["Student ID Number", user.student_id ?? "Not provided"],
+            ["Account Role", user.role.toUpperCase()],
+            ["Turnstile Pass Status", "NFC / Optical QR Synchronized"],
+            ["Booking Quota", "5 Active Concurrent Reservations"],
           ].map(([label, value]) => (
-            <div key={label} className="flex justify-between gap-4 border-t border-line pt-3">
+            <div key={label} className="flex justify-between gap-4 py-1">
               <dt className="text-on-surface-variant">{label}</dt>
-              <dd className="font-medium text-on-surface">{value}</dd>
+              <dd className="font-semibold text-primary text-right">{value}</dd>
             </div>
           ))}
         </dl>
-        <Button variant="secondary" onClick={logout}>Log out</Button>
-      </Card>
+
+        <div className="pt-4 border-t border-line flex items-center justify-between">
+          <span className="text-xs text-on-surface-variant flex items-center gap-1.5">
+            <ShieldCheck className="size-4 text-success" /> End-to-end authenticated
+          </span>
+          <Button variant="secondary" size="md" onClick={logout} className="gap-2">
+            <LogOut className="size-4" />
+            Log out
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }

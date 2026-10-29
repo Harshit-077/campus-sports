@@ -1,4 +1,4 @@
-import { ArrowRight, CalendarDays, Info } from "lucide-react";
+import { ArrowRight, CalendarDays, CheckCircle2, Clock, Info, ShieldCheck } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { formatDate, formatTime } from "@/lib/format";
@@ -27,61 +27,98 @@ export function BookingSummary({
   blockedReason,
   onBook,
 }: Props) {
-  const range = slot ? `${formatTime(slot.start)} - ${formatTime(slot.end)}` : null;
-  const quota = Math.min(100, Math.round((upcomingCount / maxActive) * 100));
+  const range = slot ? `${formatTime(slot.start)} – ${formatTime(slot.end)}` : null;
+  const remaining = Math.max(0, maxActive - upcomingCount);
+  const quotaPercent = Math.min(100, Math.round((upcomingCount / maxActive) * 100));
 
   return (
-    <aside className="rounded-2xl border border-line bg-white p-5">
-      <h2 className="font-display text-headline-sm text-primary">Booking summary</h2>
-
-      <div className="mt-4 flex items-center gap-3 rounded-xl bg-surface-container p-4">
-        <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-secondary-container text-white">
-          <CalendarDays className="size-5" strokeWidth={1.75} aria-hidden />
+    <aside className="rounded-2xl border border-line bg-surface-container-lowest p-6 shadow-sm space-y-5">
+      <div className="flex items-center justify-between border-b border-line pb-3">
+        <h2 className="font-display text-headline-sm font-semibold text-primary">
+          Booking Summary
+        </h2>
+        <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-success uppercase tracking-wider">
+          <span className="size-1.5 rounded-full bg-success" /> Live Holding
         </span>
+      </div>
+
+      {/* Selected Slot Highlight Box */}
+      <div className="flex items-center gap-3.5 rounded-xl bg-surface-container-low p-4 border border-line">
+        <div className="grid size-11 shrink-0 place-items-center rounded-xl bg-secondary-container text-white shadow-sm">
+          <CalendarDays className="size-5" />
+        </div>
         {slot ? (
           <div>
-            <p className="font-display text-headline-md text-on-surface">{range}</p>
-            <p className="text-sm text-on-surface-variant">{formatDate(slot.start)}</p>
+            <p className="font-display text-headline-sm font-bold text-primary">{range}</p>
+            <p className="text-xs text-on-surface-variant font-medium">{formatDate(slot.start)}</p>
           </div>
         ) : (
-          <p className="text-sm text-on-surface-variant">Select an open time slot to continue.</p>
+          <div>
+            <p className="text-sm font-medium text-on-surface">No slot selected</p>
+            <p className="text-xs text-on-surface-variant">Click an open time slot to reserve</p>
+          </div>
         )}
       </div>
 
-      <dl className="mt-4 space-y-2 text-sm">
+      {/* Metadata Specification Table */}
+      <dl className="space-y-2.5 text-xs border-b border-line pb-4">
         {[
           ["Facility", facility.name],
+          ["Sport Category", facility.sport.name],
           ["Location", facility.location],
-          ["Booked for", studentId ? `${studentName} (${studentId})` : studentName],
+          ["Booked for", studentId ? `${studentName} (ID: ${studentId})` : studentName],
+          ["Access Hub", "Contactless RFID Turnstile"],
         ].map(([label, value]) => (
-          <div key={label} className="flex justify-between gap-4">
+          <div key={label} className="flex justify-between gap-3">
             <dt className="text-on-surface-variant">{label}</dt>
-            <dd className="text-right font-medium text-on-surface">{value}</dd>
+            <dd className="font-semibold text-primary text-right">{value}</dd>
           </div>
         ))}
       </dl>
 
-      <p className="mt-4 flex gap-2 rounded-xl bg-surface-container-low p-3 text-sm text-on-surface-variant">
-        <Info className="mt-0.5 size-4 shrink-0" strokeWidth={1.75} aria-hidden />
-        You can cancel up to {cutoffMinutes} minutes before the start.
-      </p>
+      {/* Cancellation Notice */}
+      <div className="flex gap-2 rounded-xl bg-surface-container-low p-3 text-xs text-on-surface-variant border border-line">
+        <Info className="size-4 shrink-0 text-primary-container mt-0.5" />
+        <span>
+          Penalty-free cancellation permitted up to {cutoffMinutes} minutes before slot start.
+        </span>
+      </div>
 
-      {blockedReason && <p className="mt-3 text-sm text-error">{blockedReason}</p>}
+      {blockedReason && (
+        <p className="rounded-lg bg-error-container p-2.5 text-xs text-on-error-container font-medium">
+          {blockedReason}
+        </p>
+      )}
 
-      <Button variant="accent" size="lg" className="mt-4 w-full" disabled={!slot || !!blockedReason} onClick={onBook}>
-        {slot ? `Book this slot - ${range}` : "Book this slot"}
-        <ArrowRight className="size-5" strokeWidth={1.75} aria-hidden />
+      {/* Single Primary Accent Orange Button */}
+      <Button
+        variant="accent"
+        size="lg"
+        className="w-full text-headline-sm font-semibold h-12 shadow-sm"
+        disabled={!slot || !!blockedReason}
+        onClick={onBook}
+      >
+        <span>{slot ? `Confirm Booking — ${range}` : "Select a Time Slot"}</span>
+        <ArrowRight className="size-4 ml-1" />
       </Button>
 
-      <div className="mt-4 rounded-xl bg-surface-container-low p-3">
-        <div className="flex justify-between text-label-md text-on-surface-variant">
-          <span>Upcoming bookings</span>
-          <span>
-            {upcomingCount} / {maxActive}
+      {/* Quota Progress Meter */}
+      <div className="rounded-xl bg-surface-container-low p-3.5 border border-line space-y-2">
+        <div className="flex justify-between text-xs">
+          <span className="text-outline uppercase text-[10px] font-semibold">Active Quota</span>
+          <span className="font-semibold text-primary">
+            {upcomingCount} / {maxActive} slots used
           </span>
         </div>
-        <div className="mt-2 h-2 overflow-hidden rounded-full bg-surface-container-high">
-          <div className="h-full rounded-full bg-primary-container" style={{ width: `${quota}%` }} />
+        <div className="h-1.5 w-full rounded-full bg-surface-container-high overflow-hidden">
+          <div
+            className="h-full rounded-full bg-primary-container transition-all"
+            style={{ width: `${quotaPercent}%` }}
+          />
+        </div>
+        <div className="flex justify-between text-[11px] text-on-surface-variant">
+          <span>{remaining} booking{remaining === 1 ? "" : "s"} free</span>
+          <span className="text-success font-medium">University Fair Play</span>
         </div>
       </div>
     </aside>

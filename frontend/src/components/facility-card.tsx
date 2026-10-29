@@ -1,8 +1,7 @@
-import { ArrowRight, LayoutGrid, MapPin, Wrench } from "lucide-react";
+import { ArrowRight, Clock, Layers, MapPin, Wrench, Zap } from "lucide-react";
 import Link from "next/link";
 
 import { StatusPill } from "@/components/status-pill";
-import { buttonStyles } from "@/components/ui/button";
 import { dayLabel, formatTime } from "@/lib/format";
 import { metadataChips } from "@/lib/humanize";
 import type { Facility } from "@/lib/types";
@@ -14,70 +13,100 @@ export function FacilityCard({ facility }: { facility: Facility }) {
   const chips = metadataChips(facility.metadata);
 
   return (
-    <article className="flex flex-col gap-4 rounded-2xl border border-line bg-white p-5">
-      <header className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="text-label-sm uppercase tracking-wide text-outline">{facility.sport.name}</span>
-            <StatusPill status={facility.status} />
-          </div>
-          <h3 className="mt-1 font-display text-headline-md text-primary">{facility.name}</h3>
-          <p className="mt-1 flex items-center gap-1 text-sm text-on-surface-variant">
-            <MapPin className="size-4 shrink-0" strokeWidth={1.75} aria-hidden /> {facility.location}
-          </p>
-        </div>
-        <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-surface-container text-primary-container">
-          {maintenance ? (
-            <Wrench className="size-6" strokeWidth={1.75} aria-hidden />
-          ) : (
-            <LayoutGrid className="size-6" strokeWidth={1.75} aria-hidden />
-          )}
-        </span>
-      </header>
-
-      {chips.length > 0 && (
-        <ul className="flex flex-wrap gap-2">
-          {chips.map((chip) => (
-            <li key={chip} className="rounded-md bg-surface-container px-2 py-1 text-label-md text-on-surface">
-              {chip}
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {maintenance ? (
-        <div className="rounded-xl bg-surface-container p-3 text-sm">
-          <p className="font-medium text-on-surface">Under maintenance</p>
-          <p className="text-on-surface-variant">Booking is paused until the facility reopens.</p>
-        </div>
-      ) : (
-        <div className="grid grid-cols-2 gap-3">
-          <div className="rounded-xl bg-surface-container p-3">
-            <p className="text-label-sm text-outline">Slot length</p>
-            <p className="mt-0.5 font-display text-headline-sm text-on-surface">{facility.slot_minutes} min</p>
-          </div>
-          <div className="rounded-xl bg-surface-container p-3">
-            <p className="text-label-sm text-outline">Next slot</p>
-            <p className="mt-0.5 font-display text-headline-sm text-on-surface">
-              {next ? `${dayLabel(next.start)}, ${formatTime(next.start)} - ${formatTime(next.end)}` : "None left today"}
+    <article className="flex flex-col justify-between rounded-2xl border border-line bg-surface-container-lowest p-6 shadow-sm transition-all hover:border-primary-container/40 hover:shadow-md">
+      <div className="space-y-4">
+        {/* Header Strip */}
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-2 mb-1">
+              <span className="font-sans text-label-sm font-semibold uppercase tracking-wider text-outline">
+                {facility.sport.name}
+              </span>
+              <StatusPill status={facility.status} />
+            </div>
+            <h3 className="font-display text-headline-md font-semibold text-primary truncate">
+              {facility.name}
+            </h3>
+            <p className="mt-1 flex items-center gap-1.5 text-sm text-on-surface-variant">
+              <MapPin className="size-4 shrink-0 text-outline" /> {facility.location}
             </p>
           </div>
+          <div className="grid size-11 shrink-0 place-items-center rounded-xl bg-surface-container text-primary-container">
+            {maintenance ? (
+              <Wrench className="size-5" strokeWidth={1.75} />
+            ) : (
+              <Layers className="size-5" strokeWidth={1.75} />
+            )}
+          </div>
         </div>
-      )}
 
-      <footer className="mt-auto flex items-center justify-between gap-3">
-        <span className="text-label-md text-on-surface-variant">
-          {!maintenance && availability
-            ? `${availability.open_slots_today} open slot${availability.open_slots_today === 1 ? "" : "s"} today`
-            : ""}
-        </span>
+        {/* Attribute Metadata Chips */}
+        {chips.length > 0 && (
+          <div className="flex flex-wrap gap-1.5">
+            {chips.map((chip) => (
+              <span
+                key={chip}
+                className="rounded-md bg-surface-container px-2.5 py-1 text-label-sm font-medium text-on-surface"
+              >
+                {chip}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {/* Operating & Slot State Box */}
         {maintenance ? (
-          <span className="inline-flex h-11 items-center rounded-xl bg-surface-container-high px-4 text-sm font-medium text-on-surface-variant">
-            Maintenance active
+          <div className="rounded-xl border border-line p-3.5 slot-stripes text-sm">
+            <p className="font-semibold text-on-surface">Scheduled Facility Maintenance</p>
+            <p className="text-xs text-on-surface-variant mt-0.5">
+              Court offline for servicing. Bookings will resume once inspection is completed.
+            </p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 gap-3 text-xs">
+            <div className="rounded-xl bg-surface-container-low p-3">
+              <span className="text-outline uppercase text-[10px] font-semibold block">Slot Duration</span>
+              <span className="mt-0.5 font-display text-headline-sm font-semibold text-primary">
+                {facility.slot_minutes} min
+              </span>
+            </div>
+            <div className="rounded-xl bg-surface-container-low p-3">
+              <span className="text-outline uppercase text-[10px] font-semibold block">Next Availability</span>
+              <span className="mt-0.5 font-display text-xs font-semibold text-primary line-clamp-1">
+                {next ? `${formatTime(next.start)} – ${formatTime(next.end)}` : "None left today"}
+              </span>
+              <span className="text-[10px] text-on-surface-variant">
+                {next ? dayLabel(next.start) : "Check future dates"}
+              </span>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Footer Controls */}
+      <footer className="mt-6 flex items-center justify-between gap-3 border-t border-line pt-4">
+        <div>
+          {!maintenance && availability ? (
+            <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-success">
+              <span className="size-2 rounded-full bg-success" />
+              {availability.open_slots_today} slots free today
+            </span>
+          ) : (
+            <span className="text-xs text-on-surface-variant">Facility offline</span>
+          )}
+        </div>
+
+        {maintenance ? (
+          <span className="inline-flex h-10 items-center rounded-xl bg-surface-container px-4 text-xs font-medium text-outline">
+            Maintenance Active
           </span>
         ) : (
-          <Link href={`/facilities/${facility.id}`} className={buttonStyles("primary", "md")}>
-            View slots <ArrowRight className="size-4" strokeWidth={1.75} aria-hidden />
+          <Link
+            href={`/facilities/${facility.id}`}
+            className="inline-flex h-10 items-center justify-center gap-1.5 rounded-xl bg-primary-container px-4 text-label-md font-semibold text-white shadow-sm transition-colors hover:bg-on-primary-fixed-variant"
+          >
+            <span>View Slots</span>
+            <ArrowRight className="size-4" />
           </Link>
         )}
       </footer>
